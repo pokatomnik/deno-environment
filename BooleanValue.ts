@@ -1,4 +1,4 @@
-import { EnvValue } from "./EnvValue.ts";
+import { EnvValue } from './EnvValue.ts';
 
 export class BooleanValue extends EnvValue<boolean> {
   protected mapper(rawValue: string) {
