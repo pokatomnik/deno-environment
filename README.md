@@ -27,17 +27,17 @@ Typescript [boolean type](https://www.typescriptlang.org/docs/handbook/basic-typ
 Is a generic abstract class that must be extended in this way:
 
 ```typescript
-  interface MyType {
-    title: string;
-    tome: number;
-    isRead: boolean;
-  }
+interface MyType {
+  title: string;
+  tome: number;
+  isRead: boolean;
+}
 
-  class MyType exends EnvValue<MyType> {
-    protected mapper(rawValue: string): MyType {
-      return JSON.parse(rawValue);
-    }
+class MyType extends EnvValue<MyType> {
+  protected mapper(rawValue: string): MyType {
+    return JSON.parse(rawValue);
   }
+}
 ```
 
 So the raw env value could be `'{"title": "Harry Potter", "tome": 1, "isRead": false}'`. And the Environment converter can use JSON parser to do all the work.
