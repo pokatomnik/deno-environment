@@ -1,9 +1,9 @@
-import { EnvValue } from "./EnvValue.ts";
+import { EnvValue } from './EnvValue.ts';
 
 export class NumberValue extends EnvValue<number> {
   protected mapper(rawValue: string) {
-    if (rawValue === "") {
-      throw new Error("Empty value provided");
+    if (rawValue === '') {
+      throw new Error('Empty value provided');
     }
 
     const numberValueRaw = Number(rawValue);

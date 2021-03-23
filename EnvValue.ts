@@ -1,4 +1,4 @@
-import { Value } from "./Value.ts";
+import { Value } from './Value.ts';
 
 export abstract class EnvValue<T> {
   readonly #key: string;
@@ -12,9 +12,8 @@ export abstract class EnvValue<T> {
   constructor(key: string, defaultValue?: T) {
     this.#key = key;
     this.#rawValue = Deno.env.get(key);
-    this.#defaultValue = defaultValue === undefined
-      ? null
-      : new Value(defaultValue);
+    this.#defaultValue =
+      defaultValue === undefined ? null : new Value(defaultValue);
   }
 
   protected abstract mapper(rawValue: string): T;
@@ -32,6 +31,7 @@ export abstract class EnvValue<T> {
   public get() {
     return (this.#computedValue
       ? this.#computedValue
-      : (this.#computedValue = new Value(this.compute()))).get();
+      : (this.#computedValue = new Value(this.compute()))
+    ).get();
   }
 }

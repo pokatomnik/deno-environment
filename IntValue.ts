@@ -1,4 +1,4 @@
-import { NumberValue } from "./NumberValue.ts";
+import { NumberValue } from './NumberValue.ts';
 
 export class IntValue extends NumberValue {
   protected mapper(rawValue: string) {
